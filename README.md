@@ -2,7 +2,7 @@
 
 #### 介绍
 一个基于React+TS+AntD的后台管理系统
-- 这里是列表文本脚手架采用vite、包管理pnpm
+- 脚手架采用vite、包管理pnpm
 - 状态管理采用react-redux+rtk
 - 路由采用react-router-dom@v6
 - 网络请求基于axios封装
