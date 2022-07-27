@@ -46,6 +46,8 @@ export default function index() {
 
       </Route>
       <Route path='/login' element={LazyLoad('../views/LoginView/LoginView')}></Route>
+      <Route path='/news' element={LazyLoad('../views/Visitor/VisitorView.tsx')}></Route>
+      <Route path='/detail/:id' element={LazyLoad('../views/Visitor/Detail.tsx')}></Route>
     </Routes>
   )
 }

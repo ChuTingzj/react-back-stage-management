@@ -14,13 +14,13 @@ export default function SideMenu() {
   const defaultOpenMenu = useMemo(() => {
     return '/' + location.pathname.split('/')[1]
   }, [location.pathname])
-  const { menuList } = useSelector((state: RootState) => state.home)
+  const { menuList, collapsed } = useSelector((state: RootState) => state.home)
   useEffect(() => {
     dispatch(initMenuList())
   }, [])
   const executor = getMenuList(menuList)
   return (
-    <Sider trigger={null} collapsible collapsed={false}>
+    <Sider trigger={null} collapsible collapsed={collapsed}>
       <Parent>
         <LogoDiv>React后台管理系统</LogoDiv>
         <Child>

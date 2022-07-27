@@ -11,7 +11,7 @@ export const addPending = (config: AxiosRequestConfig) => {
     qs.stringify(config.data)
   ].join('&')
   const controller = new AbortController()
-  config.signal = controller.signal
+  config.signal = config.signal || controller.signal
   if (!pending.has(url)) {
     // 如果 pending 中不存在当前请求，则添加进去
     pending.set(url, controller)
@@ -29,7 +29,6 @@ export const removePending = (config: AxiosRequestConfig) => {
     // 如果在 pending 中存在当前请求标识，需要取消当前请求，并且移除
     const controller = pending.get(url)
     controller.abort()
-    console.log(1)
     pending.delete(url)
   }
 }
